@@ -1,8 +1,10 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { selectDatas } from '../store/selectors';
+import { Outlet, Link } from "react-router-dom";
 import { Table, Button } from 'rsuite';
-import './rsuitestyles.css';
+// import './rsuitestyles.css';
 import '../index.css';
+import styles from './styles.module.css';
 import { TableData } from './TableData';
 
 
@@ -50,10 +52,15 @@ export const Root = () => {
             </ul>
           </nav>
         </div>
-        <div id="detail">
+        <div id="detail" className='detail'>
           <TableData />
-          <p>Котировки на следующий рабочий день</p>
-          <button id="show">Показать</button>
+          <div id='info'>Котировки на следующий рабочий день</div>
+  
+          <Link to={`table/2`}><div id='show'>Показать</div></Link>
+
+          <div>
+            <Outlet />
+          </div>
         </div>
       </>
     );

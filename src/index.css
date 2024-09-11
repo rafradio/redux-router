@@ -13,6 +13,13 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.detail a {
+  color: #3a3a3a !important;
+  text-decoration: none !important;
+  background-color: #b6a8ff !important;
+  
+}
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -176,6 +183,7 @@ form[action$="destroy"] button {
   border-right: solid 1px #e3e3e3;
   display: flex;
   flex-direction: column;
+  overflow: hidden !important;
 }
 
 #sidebar > * {
@@ -310,6 +318,7 @@ i {
   flex: 1;
   padding: 2rem 4rem;
   width: 100%;
+  overflow-y: scroll !important;
 }
 
 #detail.loading {
@@ -452,10 +461,25 @@ i {
 table {
   margin-bottom: 20px;
 }
-
-#show {
+.nav-link {
   margin-top: 20px;
+  background-color: #3992ff;
+  color: #000000;
+  font-weight: 500;
+  width: 50px;
 }
-p {
-  margin-top: 20px;
+#show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #b6a8ff;
+    text-decoration: none;
+    font-weight: 500;
+    width: 100px;
+    height: 40px;
+    border-radius: 7px;
+    margin-top: 20px;
+}
+#info {
+  margin-top: 50px !important;
 }
