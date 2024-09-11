@@ -448,3 +448,14 @@ i {
   justify-content: center;
   width: 100%;
 }
+
+table {
+  margin-bottom: 20px;
+}
+
+#show {
+  margin-top: 20px;
+}
+p {
+  margin-top: 20px;
+}

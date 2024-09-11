@@ -3,6 +3,7 @@ import { selectDatas } from '../store/selectors';
 import { Table, Button } from 'rsuite';
 import './rsuitestyles.css';
 import '../index.css';
+import { TableData } from './TableData';
 
 
 const { Column, HeaderCell, Cell } = Table;
@@ -10,9 +11,6 @@ const { Column, HeaderCell, Cell } = Table;
 export const Root = () => {
     const dispatch = useDispatch();
     const datas = useSelector(selectDatas);
-    // const tableHeadres = ['Масса слитка, г', 'Цена за 1г, руб', 'Стоимость слитка, руб'];
-    const tableHeadres = ['id', 'name', 'test'];
-    // let data = [{id: '1',firstName: 'firstName', lastName: 'test'}];
 
     return (
       <>
@@ -53,33 +51,9 @@ export const Root = () => {
           </nav>
         </div>
         <div id="detail">
-        <Table
-            height={400}
-            width={450}
-            data={datas}
-        >
-          <Column width={150} align="center" fixed>
-            <HeaderCell>Масса слитка, г</HeaderCell>
-            <Cell dataKey="weight" />
-          </Column>
-
-          <Column width={150} align="center">
-            <HeaderCell>Цена за 1г, руб</HeaderCell>
-            <Cell dataKey="rate" />
-          </Column>
-
-          <Column width={150} align="center">
-            <HeaderCell>Стоимость</HeaderCell>
-            <Cell dataKey="price" />
-          </Column>
-          {/* {tableHeadres.map((headerName) => {
-              <Column width={60} align="center" fixed>
-                <HeaderCell>{headerName}</HeaderCell>
-                <Cell dataKey="id" />
-              </Column>
-          })} */}
-            
-        </Table>
+          <TableData />
+          <p>Котировки на следующий рабочий день</p>
+          <button id="show">Показать</button>
         </div>
       </>
     );
