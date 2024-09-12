@@ -1,15 +1,15 @@
 import {createBrowserRouter} from "react-router-dom";
-import App from '../App';
-import { TableData } from '../features/TableData'
+import { Root } from '../features/Root'
+import { TableNext } from '../features/TableNext'
 
 export const router = createBrowserRouter([
     {
       path: '/',
-      element: <App/>,
+      element: <Root/>,
       children: [
         {
-          path: "table/:number",
-          element: <TableData />,
+          path: "table/:dateID",
+          element: <TableNext />,
         },
       ]
     },

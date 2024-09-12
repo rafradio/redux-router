@@ -3,21 +3,23 @@ import { tableDatas } from './data/dataForTable';
 
 const initialState = {
     dataTable: tableDatas(),
+    buttonState: "Показать",
+    navigatorLinkNav: `table/2`,
 }
 
 export const counterSlice = createSlice({
     name: 'counter',
     initialState,
     reducers: {
-        increment: state => {
-            state.counterValue += 1
+        btnTableClick: state => {
+            state.buttonState = state.buttonState == "Показать" ? "Скрыть" : "Показать"
         },
-        postAdded: (state, action) => {
-            state.posts.push(action.payload);
-        }
+        toggleNavLink: state => {
+            state.navigatorLinkNav = state.navigatorLinkNav == `table/2` ? `/` : `table/2`
+        },
     },
 });
 
-export const { increment, postAdded } = counterSlice.actions;
+ export const { btnTableClick, toggleNavLink } = counterSlice.actions;
 
 export default counterSlice.reducer;

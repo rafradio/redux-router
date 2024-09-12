@@ -1,18 +1,19 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { selectDatas } from '../store/selectors';
+import { selectDatas, selectButtonState, selectNavState } from '../store/selectors';
 import { Outlet, Link } from "react-router-dom";
-import { Table, Button } from 'rsuite';
-// import './rsuitestyles.css';
 import '../index.css';
-import styles from './styles.module.css';
 import { TableData } from './TableData';
-
-
-const { Column, HeaderCell, Cell } = Table;
+import { btnTableClick, toggleNavLink } from './CounterSlice';
 
 export const Root = () => {
     const dispatch = useDispatch();
     const datas = useSelector(selectDatas);
+    const buttonType = useSelector(selectButtonState);
+    const clkButton = () => {
+      dispatch(btnTableClick());
+      dispatch(toggleNavLink());
+    }
+    const navigatorLink = useSelector(selectNavState);
 
     return (
       <>
@@ -37,17 +38,15 @@ export const Root = () => {
                 aria-live="polite"
               ></div>
             </form>
-            <form method="post">
-              <button type="submit">New</button>
-            </form>
+            <button>New</button>
           </div>
           <nav>
             <ul>
               <li>
-                <a href={`/contacts/1`}>Таблица 1</a>
+                <a>Таблица 1</a>
               </li>
               <li>
-                <a href={`/contacts/2`}>Таблица 2</a>
+                <a>Таблица 2</a>
               </li>
             </ul>
           </nav>
@@ -55,9 +54,7 @@ export const Root = () => {
         <div id="detail" className='detail'>
           <TableData />
           <div id='info'>Котировки на следующий рабочий день</div>
-  
-          <Link to={`table/2`}><div id='show'>Показать</div></Link>
-
+          <Link to={navigatorLink}><div id='show' onClick={clkButton}>{buttonType}</div></Link>
           <div>
             <Outlet />
           </div>
