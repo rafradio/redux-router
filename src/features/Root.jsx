@@ -52,6 +52,7 @@ export const Root = () => {
           </nav>
         </div>
         <div id="detail" className='detail'>
+          
           <TableData />
           <div id='info'>Котировки на следующий рабочий день</div>
           <Link to={navigatorLink}><div id='show' onClick={clkButton}>{buttonType}</div></Link>

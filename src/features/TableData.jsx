@@ -8,6 +8,9 @@ export const TableData = () => {
     datas = datas.filter(data => data.date == "15.08.2024");
     
     return (
-        <TableBox datas={datas}/>
+        <>
+          <h4>Курс по состояния на </h4>
+          <TableBox datas={datas}/>
+        </>
     );
 }

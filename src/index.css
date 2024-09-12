@@ -481,11 +481,14 @@ table {
     width: 100px;
     height: 40px;
     border-radius: 7px;
-    margin-top: 20px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     color:#000000;
 }
 #info {
-  margin-top: 50px !important;
+  margin-top: 1rem !important;
+  
+
 }
 
 .detail a {

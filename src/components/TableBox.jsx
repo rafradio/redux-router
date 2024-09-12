@@ -7,7 +7,7 @@ const { Column, HeaderCell, Cell } = Table;
 export const TableBox = (props) => {
     return (
         <Table
-            height={400}
+            height={470}
             width={450}
             data={props.datas}
         >

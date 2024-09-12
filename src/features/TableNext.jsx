@@ -11,6 +11,9 @@ export const TableNext = () => {
     }
     
     return (
-      <TableBox datas={datas}/>
+      <>
+        <h4>Курс по состояния на </h4>
+        <TableBox datas={datas}/>
+      </>
   );
 }
