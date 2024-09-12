@@ -1,6 +1,4 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom'
-import { selectDatas } from '../store/selectors';
 import { Table, Button } from 'rsuite';
 import './rsuitestyles.css';
 
