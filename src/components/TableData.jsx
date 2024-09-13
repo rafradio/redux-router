@@ -1,7 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { selectDatas } from '../store/selectors';
-import './rsuitestyles.css';
-import { TableBox } from '../components/TableBox';
+import { TableBox } from './TableBox';
 
 export const TableData = () => {
     let datas = useSelector(selectDatas);
@@ -9,7 +8,7 @@ export const TableData = () => {
     
     return (
         <>
-          <h4>Курс по состояния на </h4>
+          <h4>Курс по состоянию на </h4>
           <TableBox datas={datas}/>
         </>
     );

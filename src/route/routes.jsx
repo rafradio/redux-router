@@ -1,6 +1,6 @@
 import {createBrowserRouter} from "react-router-dom";
-import { Root } from '../features/Root'
-import { TableNext } from '../features/TableNext'
+import { Root } from './Root'
+import { TableNext } from "../components/TableNext";
 
 export const router = createBrowserRouter([
     {

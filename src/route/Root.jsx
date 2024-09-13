@@ -2,8 +2,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectDatas, selectButtonState, selectNavState } from '../store/selectors';
 import { Outlet, Link } from "react-router-dom";
 import '../index.css';
-import { TableData } from './TableData';
-import { btnTableClick, toggleNavLink } from './CounterSlice';
+import { TableData } from '../components/TableData';
+import { btnTableClick, toggleNavLink } from '../features/CounterSlice';
 
 export const Root = () => {
     const dispatch = useDispatch();
